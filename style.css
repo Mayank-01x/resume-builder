@@ -1,0 +1,140 @@
+:root {
+    --font-classic: 'Roboto Slab', serif;
+    --font-modern: 'Lato', sans-serif;
+    --font-minimalist: 'Inter', sans-serif;
+}
+
+/* --- Base Resume Styles --- */
+.resume-preview {
+    transition: all 0.3s ease-in-out;
+}
+.resume-preview .section { 
+    margin-bottom: 1.5rem; 
+}
+.resume-preview h3 { 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+}
+.resume-preview p { 
+    margin-bottom: 0.25rem; 
+    line-height: 1.6; 
+}
+.resume-preview ul { 
+    list-style: disc; 
+    padding-left: 20px; 
+}
+.experience-entry, .education-entry, .achievement-entry, .certification-entry {
+    margin-bottom: 1rem;
+}
+
+/* --- Placeholder Text Styling --- */
+[data-placeholder]::before {
+    content: attr(data-placeholder);
+    color: #9ca3af;
+}
+[data-placeholder]:not(:empty)::before {
+    display: none;
+}
+[data-placeholder]:empty {
+    min-height: 1.5rem; 
+}
+
+/* --- Template-Specific Styles --- */
+
+/* 1. Classic Template */
+.classic-template {
+    font-family: var(--font-classic);
+    color: #333;
+}
+.classic-template .resume-header {
+    text-align: center;
+    border-bottom: 3px solid #34495e;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+.classic-template h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+.classic-template h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    border-bottom: 1px solid #bdc3c7;
+    padding-bottom: 5px;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* 2. Modern Template */
+.modern-template {
+    font-family: var(--font-modern);
+    color: #555;
+}
+.modern-template .resume-header {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin: -2rem -2rem 1.5rem -2rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.modern-template h1 {
+    color: white;
+    font-size: 2.75rem;
+    font-weight: 700;
+    border: none;
+}
+.modern-template .resume-header p, .modern-template .resume-header a {
+    color: white;
+    opacity: 0.9;
+}
+.modern-template h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #16a085;
+    border-left: 4px solid #1abc9c;
+    padding-left: 10px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 3. Minimalist Template */
+.minimalist-template {
+    font-family: var(--font-minimalist);
+    color: #444;
+    letter-spacing: 0.5px;
+}
+.minimalist-template .resume-header {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.minimalist-template h1 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.minimalist-template .contact-info {
+    font-size: 0.9rem;
+    color: #555;
+}
+.minimalist-template h2 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 1.5rem;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.minimalist-template p {
+    line-height: 1.7;
+}
+
+/* --- Hide sections if they are empty --- */
+.section:has(div:empty, ul:empty, p:empty) {
+    display: none;
+}
